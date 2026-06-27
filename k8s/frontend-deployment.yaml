@@ -3,6 +3,7 @@ kind: Deployment
 
 metadata:
   name: frontend
+  namespace: default
 
 spec:
   replicas: 1
