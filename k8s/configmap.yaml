@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: frontend-config
+
+data:
+  BACKEND_URL: "http://backend-service:5001"
+  APP_TITLE: "Simple DevOps Demo"

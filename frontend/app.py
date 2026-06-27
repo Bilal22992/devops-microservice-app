@@ -1,9 +1,11 @@
 from flask import Flask
 import requests
+import os
 
 app = Flask(__name__)
 
-BACKEND_URL = "http://backend:5001"
+BACKEND_URL = os.getenv("BACKEND_URL")
+APP_TITLE = os.getenv("APP_TITLE")
 
 @app.route("/")
 def home():
@@ -11,9 +13,10 @@ def home():
     data = response.json()
 
     return f"""
-    <h1>Simple DevOps Demo</h1>
+    <h1>{APP_TITLE}</h1>
 
     <p><b>Backend Message:</b> {data["message"]}</p>
+
     <p><b>Version:</b> {data["version"]}</p>
     """
 
